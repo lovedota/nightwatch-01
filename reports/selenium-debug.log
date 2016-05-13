@@ -1,0 +1,74 @@
+11:47:06.159 INFO - Launching a standalone server
+Setting system property webdriver.chrome.driver to ./bin/chromedriver
+11:47:06.198 INFO - Java: Oracle Corporation 24.79-b02
+11:47:06.198 INFO - OS: Mac OS X 10.11.4 x86_64
+11:47:06.209 INFO - v2.43.0, with Core v2.43.0. Built from revision 597b76b
+11:47:06.296 INFO - Default driver org.openqa.selenium.ie.InternetExplorerDriver registration is skipped: registration capabilities Capabilities [{platform=WINDOWS, ensureCleanSession=true, browserName=internet explorer, version=}] does not match with current platform: MAC
+11:47:06.337 INFO - RemoteWebDriver instances should connect to: http://127.0.0.1:4444/wd/hub
+11:47:06.338 INFO - Version Jetty/5.1.x
+11:47:06.338 INFO - Started HttpContext[/selenium-server/driver,/selenium-server/driver]
+11:47:06.339 INFO - Started HttpContext[/selenium-server,/selenium-server]
+11:47:06.339 INFO - Started HttpContext[/,/]
+11:47:06.360 INFO - Started org.openqa.jetty.jetty.servlet.ServletHandler@6677df17
+11:47:06.360 INFO - Started HttpContext[/wd,/wd]
+11:47:06.365 INFO - Started SocketListener on 0.0.0.0:4444
+11:47:06.365 INFO - Started org.openqa.jetty.jetty.Server@511192bd
+11:47:06.749 INFO - Executing: [new session: Capabilities [{platform=ANY, javascriptEnabled=true, acceptSslCerts=true, browserName=chrome, name=Test Last Mile Checkin}]])
+11:47:06.758 INFO - Creating a new session for Capabilities [{platform=ANY, javascriptEnabled=true, acceptSslCerts=true, browserName=chrome, name=Test Last Mile Checkin}]
+Starting ChromeDriver 2.21.371459 (36d3d07f660ff2bc1bf28a75d1cdabed0983e7c4) on port 48548
+Only local connections are allowed.
+11:47:07.734 INFO - Done: [new session: Capabilities [{platform=ANY, javascriptEnabled=true, acceptSslCerts=true, browserName=chrome, name=Test Last Mile Checkin}]]
+11:47:07.751 INFO - Executing: [get: http://lms-1400.lms-stag.lzd.co/login])
+11:47:08.315 INFO - Done: [get: http://lms-1400.lms-stag.lzd.co/login]
+11:47:08.325 INFO - Executing: [find elements: By.selector: input[type=text]])
+11:47:08.360 INFO - Done: [find elements: By.selector: input[type=text]]
+11:47:08.364 INFO - Executing: [is displayed: 0 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: input[type=text]]])
+11:47:08.380 INFO - Done: [is displayed: 0 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: input[type=text]]]
+11:47:08.385 INFO - Executing: [find element: By.selector: input[type=text]])
+11:47:08.402 INFO - Done: [find element: By.selector: input[type=text]]
+11:47:08.407 INFO - Executing: [send keys: 0 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: input[type=text]], [m, i, l, e, s, t, o, n, e, 2]])
+11:47:08.476 INFO - Done: [send keys: 0 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: input[type=text]], [m, i, l, e, s, t, o, n, e, 2]]
+11:47:08.482 INFO - Executing: [find element: By.selector: input[type=password]])
+11:47:08.499 INFO - Done: [find element: By.selector: input[type=password]]
+11:47:08.504 INFO - Executing: [send keys: 1 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: input[type=password]], [m, i, l, e, s, t, o, n, e, 2]])
+11:47:08.553 INFO - Done: [send keys: 1 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: input[type=password]], [m, i, l, e, s, t, o, n, e, 2]]
+11:47:08.561 INFO - Executing: [find elements: By.selector: input[type=submit]])
+11:47:08.579 INFO - Done: [find elements: By.selector: input[type=submit]]
+11:47:08.582 INFO - Executing: [is displayed: 2 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: input[type=submit]]])
+11:47:08.596 INFO - Done: [is displayed: 2 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: input[type=submit]]]
+11:47:08.602 INFO - Executing: [find element: By.selector: input[type=submit]])
+11:47:08.624 INFO - Done: [find element: By.selector: input[type=submit]]
+11:47:08.627 INFO - Executing: [click: 2 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: input[type=submit]]])
+11:47:09.238 INFO - Done: [click: 2 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: input[type=submit]]]
+11:47:09.241 INFO - Executing: [get: http://lms-1400.lms-stag.lzd.co/inbound/lmd/runsheet/checkin])
+11:47:09.983 INFO - Done: [get: http://lms-1400.lms-stag.lzd.co/inbound/lmd/runsheet/checkin]
+11:47:09.990 INFO - Executing: [find elements: By.selector: .page-header])
+11:47:10.009 INFO - Done: [find elements: By.selector: .page-header]
+11:47:10.013 INFO - Executing: [get text: 3 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: .page-header]])
+11:47:10.040 INFO - Done: [get text: 3 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: .page-header]]
+11:47:10.054 INFO - Executing: [find elements: By.selector: .checkin-runsheets-list])
+11:47:10.074 INFO - Done: [find elements: By.selector: .checkin-runsheets-list]
+11:47:10.081 INFO - Executing: [find element: By.selector: .checkin-runsheets-list])
+11:47:10.104 INFO - Done: [find element: By.selector: .checkin-runsheets-list]
+11:47:10.108 INFO - Executing: [click: 4 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: .checkin-runsheets-list]])
+11:47:10.205 INFO - Done: [click: 4 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: .checkin-runsheets-list]]
+11:47:10.211 INFO - Executing: [find elements: By.selector: .checkin-runsheets-list option])
+11:47:10.230 INFO - Done: [find elements: By.selector: .checkin-runsheets-list option]
+11:47:10.242 INFO - Executing: [click: 5 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: .checkin-runsheets-list option]])
+11:47:10.280 INFO - Done: [click: 5 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: .checkin-runsheets-list option]]
+11:47:10.283 INFO - Executing: [get text: 5 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: .checkin-runsheets-list option]])
+11:47:10.307 INFO - Done: [get text: 5 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: .checkin-runsheets-list option]]
+11:47:11.319 INFO - Executing: [click: 6 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: .checkin-runsheets-list option]])
+11:47:11.625 INFO - Done: [click: 6 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: .checkin-runsheets-list option]]
+11:47:11.630 INFO - Executing: [find elements: By.selector: .checkin-runsheet-details])
+11:47:11.897 INFO - Done: [find elements: By.selector: .checkin-runsheet-details]
+11:47:12.903 INFO - Executing: [click: 7 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: .checkin-runsheets-list option]])
+11:47:12.946 INFO - Done: [click: 7 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: .checkin-runsheets-list option]]
+11:47:12.952 INFO - Executing: [find elements: By.selector: .checkin-runsheet-details])
+11:47:12.971 INFO - Done: [find elements: By.selector: .checkin-runsheet-details]
+11:47:13.983 INFO - Executing: [click: 8 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: .checkin-runsheets-list option]])
+11:47:14.025 INFO - Done: [click: 8 [[ChromeDriver: chrome on MAC (a8ffb4d4134e7d1c74b86d1002095749)] -> css selector: .checkin-runsheets-list option]]
+11:47:14.030 INFO - Executing: [find elements: By.selector: .checkin-runsheet-details])
+11:47:14.041 INFO - Done: [find elements: By.selector: .checkin-runsheet-details]
+11:47:15.052 INFO - Executing: [delete session: fdfa04ba-e212-4846-b03d-97cadec1d906])
+11:47:15.620 INFO - Done: [delete session: fdfa04ba-e212-4846-b03d-97cadec1d906]
