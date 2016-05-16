@@ -1,7 +1,7 @@
 {
   "src_folders": ["tests"],
   "output_folder": "reports",
-  "custom_commands_path": "",
+  "custom_commands_path": "commands",
   "custom_assertions_path": "",
   "page_objects_path": "pages",
   "globals_path": "globals.js",
@@ -18,7 +18,7 @@
   },
   "test_settings": {
     "default": {
-      "launch_url": "http://lms-1400.lms-stag.lzd.co",
+      "launch_url": "https://lms-stag-sg.lzd.co/",
       "selenium_port": 4444,
       "selenium_host": "localhost",
       "silent": true,
@@ -27,6 +27,13 @@
         "javascriptEnabled": true,
         "acceptSslCerts": true
       }
+    }
+  },
+  "test_runner" : {
+    "type" : "mocha",
+    "options" : {
+      "ui" : "bdd",
+      "reporter" : "spec"
     }
   }
 }

@@ -10,7 +10,7 @@ const loginCommands = {
 };
 
 module.exports = {
-  url: 'http://lms-1400.lms-stag.lzd.co/login',
+  url: 'https://lms-stag-sg.lzd.co/login',
   commands: [loginCommands],
   elements: {
     emailInput: {

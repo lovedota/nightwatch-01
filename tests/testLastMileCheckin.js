@@ -1,46 +1,86 @@
 'use strict';
 
-module.exports = {
-    'User Logs in and got to Checkin Page': (browser) => {
-        const loginPage = browser.page.loginPage();
-        const lastMileCheckinPage = browser.page.lastMileCheckinPage();
+describe('Last Mile Checkin Page', () => {
+    before((client, done) => {
+      done();
+    });
+    
+    describe('Page Title', () => {
+        it('should have correct title', (client) => {
+            const loginPage = client.page.loginPage();
+            const lastMileCheckinPage = client.page.lastMileCheckinPage();
 
-        loginPage
-            .navigate()
-            .login('milestone2', 'milestone2');
+            loginPage
+                .navigate()
+                .login('admin', 'admin');
 
-        lastMileCheckinPage.navigate();
+            lastMileCheckinPage
+                .navigate();
 
-        lastMileCheckinPage.expect.element('.page-header').text.to.equal('LMD Runsheet Checkin');
-    },
+            lastMileCheckinPage
+                .assert.title('LMD Runsheet Checkin - LMS');
+        });
 
-    'Choose a runsheet': (browser) => {
-        const lastMileCheckinPage = browser.page.lastMileCheckinPage(),
-              selectSelector = '.checkin-runsheets-list',
-              detailSelector = '.checkin-runsheet-details';
-            
-        lastMileCheckinPage
-            .waitForElementPresent(selectSelector)
-            .click(selectSelector, () => {
-                browser.elements('css selector', '.checkin-runsheets-list option', (result) => {
+        it('should have correct header', (client) => {
+            const lastMileCheckinPage = client.page.lastMileCheckinPage();
+
+            lastMileCheckinPage
+                .expect.element('.page-header').text.to.equal('LMD Runsheet Checkin');
+        });
+    });
+
+    describe('Runsheet List', () => {
+        it('should render placeholder text by default', (client) => {
+            const lastMileCheckinPage = client.page.lastMileCheckinPage();
+
+            lastMileCheckinPage
+                .waitForElementPresent('@runsheetSelect')
+                .click('@runsheetSelect')
+                .click('option:nth-child(1)');
+
+            lastMileCheckinPage
+                .expect
+                .element('@runsheetDetails')
+                .text.to.equal('Select runsheet for checkin');
+        });
+
+        it('should render runsheet details when choosing any runsheet', (client) => {
+            const lastMileCheckinPage = client.page.lastMileCheckinPage();
+
+            lastMileCheckinPage
+                .waitForElementPresent('@runsheetSelect')
+                .click('@runsheetSelect');
+
+            client.elements(
+                'css selector',
+                lastMileCheckinPage.elements.runsheetOptions.selector,
+                (result) => {
                     result.value.forEach((element, index) => {
-                        browser.elementIdClick(element.ELEMENT); 
-                        
-                        if (index !== 0) {
-                            lastMileCheckinPage.expect.element(detailSelector).to.be.present;
-                        } else {
-                            browser.elementIdText(element.ELEMENT, (textResult) => {
-                                browser.assert.equal(textResult.value, 'Runsheet');
-                            }); 
+                        client.elementIdClick(element.ELEMENT);
+
+                        if (index > 0) {
+                            let details = lastMileCheckinPage.section.details;
+
+                            details.expect.element('@scanSection').to.be.visible;
+                            details.expect.element('@checkedTableSection').to.be.visible;
+                            details.expect.element('@uncheckedTableSection').to.be.visible;
+                            details.expect.element('@lostTableSection').to.be.visible;
+
+                            lastMileCheckinPage
+                                .expect
+                                .element('@runsheetDetails')
+                                .not.text.to.equal('Select runsheet for checkin');
                         }
-                        
-                        browser.pause(1000); 
+
+                        client.pause(500);
                     });
                 });
-            });
-            //.click('.checkin-runsheets-list option[value="50"]');
-            
-            
-        browser.end();
-    }
-};
+        });
+    });
+
+    after((client, done) => {
+      client.end(() => {
+        done();
+      });
+    });
+});
