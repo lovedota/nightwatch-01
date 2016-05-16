@@ -1,15 +1,27 @@
 'use strict';
 
+let loginPage,
+    lastMileCheckinPage;
+
+function init() {
+    loginPage
+        .navigate()
+        .login('admin', 'admin');
+
+    lastMileCheckinPage
+        .navigate();
+}
+
 describe('Last Mile Checkin Page', () => {
     before((client, done) => {
-      done();
-    });
-    
-    describe('Page Title', () => {
-        it('should have correct title', (client) => {
-            const loginPage = client.page.loginPage();
-            const lastMileCheckinPage = client.page.lastMileCheckinPage();
+        loginPage = client.page.loginPage();
+        lastMileCheckinPage = client.page.lastMileCheckinPage();
 
+        done();
+    });
+
+    describe('Page Title', () => {
+        it('should have correct title', () => {
             loginPage
                 .navigate()
                 .login('admin', 'admin');
@@ -21,18 +33,14 @@ describe('Last Mile Checkin Page', () => {
                 .assert.title('LMD Runsheet Checkin - LMS');
         });
 
-        it('should have correct header', (client) => {
-            const lastMileCheckinPage = client.page.lastMileCheckinPage();
-
+        it('should have correct header', () => {
             lastMileCheckinPage
                 .expect.element('.page-header').text.to.equal('LMD Runsheet Checkin');
         });
     });
 
     describe('Runsheet List', () => {
-        it('should render placeholder text by default', (client) => {
-            const lastMileCheckinPage = client.page.lastMileCheckinPage();
-
+        it('should render placeholder text by default', () => {
             lastMileCheckinPage
                 .waitForElementPresent('@runsheetSelect')
                 .click('@runsheetSelect')
@@ -45,8 +53,6 @@ describe('Last Mile Checkin Page', () => {
         });
 
         it('should render runsheet details when choosing any runsheet', (client) => {
-            const lastMileCheckinPage = client.page.lastMileCheckinPage();
-
             lastMileCheckinPage
                 .waitForElementPresent('@runsheetSelect')
                 .click('@runsheetSelect');
@@ -79,8 +85,8 @@ describe('Last Mile Checkin Page', () => {
     });
 
     after((client, done) => {
-      client.end(() => {
-        done();
-      });
+        client.end(() => {
+            done();
+        });
     });
 });
